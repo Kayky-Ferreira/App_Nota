@@ -9,8 +9,9 @@ namespace App_Nota
 {
     internal static class Program
     {
-        public static string usuario;
-        
+        public static string user1;
+        public static string senha_user1;
+     
 
 
         /// <summary>

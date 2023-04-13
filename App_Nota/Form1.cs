@@ -24,7 +24,7 @@ namespace App_Nota
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             dData.Text = DateTime.Today.ToString();
-            lblNome.Text = Program.usuario;
+            lblNome.Text = Program.user1;
         }
 
         //Método para os calculos

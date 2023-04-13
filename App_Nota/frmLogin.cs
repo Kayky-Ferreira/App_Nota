@@ -22,19 +22,22 @@ namespace App_Nota
             string nomeuser = "Kayky";
             string senha = "1234";
             //puxando um var do Programa apenas para testar e puxar para o Form1
-            Program.usuario = nomeuser;
-
+            Program.user1 = nomeuser;
+            Program.senha_user1 = senha;
+            
             //Verificando Senhas
             if (txt_Nome_login.Text == "" && txt_Senha_Login.Text == "")
             {
                 MessageBox.Show("Digite seu nome e senha nos campos");
                 return;
             }
-           else if (txt_Nome_login.Text != nomeuser && txt_Senha_Login.Text != senha)
+            //Diferentes possibilidades de erro de login
+            else if (txt_Nome_login.Text != nomeuser && txt_Senha_Login.Text != senha || txt_Nome_login.Text == nomeuser && txt_Senha_Login.Text != senha || txt_Nome_login.Text != nomeuser && txt_Senha_Login.Text == senha)
             {
                 MessageBox.Show("Nome ou senha incorretos!!");
                 return;
             }
+            //Nome e senha certo
             else if (txt_Nome_login.Text == nomeuser && txt_Senha_Login.Text == senha)
             {
                 //Abrir segunda tela
