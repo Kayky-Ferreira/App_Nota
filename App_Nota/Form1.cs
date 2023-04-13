@@ -15,7 +15,20 @@ namespace App_Nota
         //variáveis global
         float nota1, nota2, nota3, nota4, media;
 
-        private void btnExecutar_Click(object sender, EventArgs e)
+        public FrmPrincipal()
+        {
+            InitializeComponent();
+        }
+
+        //Informações da tela
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            dData.Text = DateTime.Today.ToString();
+            lblNome.Text = Program.usuario;
+        }
+
+        //Método para os calculos
+        public void calcular()
         {
             nota1 = float.Parse(txtNota1.Text);
             nota2 = float.Parse(txtNota2.Text);
@@ -23,21 +36,29 @@ namespace App_Nota
             nota4 = float.Parse(txtNota4.Text);
 
             media = (nota1 + nota2 + nota3 + nota4) / 4;
-
             lblMedia.Text = media.ToString();
+
         }
 
-        public FrmPrincipal()
+        //comando do botão Executar
+        private void btnExecutar_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            calcular();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
+        //Comando do Botão "Situaçao do Aluno"
+        private void btn_Situação_aluno_Click(object sender, EventArgs e)
         {
-            dData.Text = DateTime.Today.ToString();
-
-
-
+            if (media >= 6)
+            {
+                lbl_Situacao.Text = "Parabéns, você está aprovado!!";
+            }
+            else
+            {
+                lbl_Situacao.Text = "Sinto muito, Você está reprovado!!";
+            }
         }
+
+
     }
 }
